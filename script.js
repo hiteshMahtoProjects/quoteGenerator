@@ -15,6 +15,15 @@ function newQuote() {
 
   quoteText.textContent = quote.text;
 }
+
+// Tweet Quote
+
+function tweetQuote() {
+  const twitterUrl = `https://twitter.com/intent/tweet?text=${quoteText.textContent} - ${authorText.textContent}`;
+  window.open(twitterUrl, "_blank");
+}
+
 //  Event Listener
+twitterBtn.addEventListener("click", tweetQuote);
 newQuoteBtn.addEventListener("click", newQuote);
 newQuote();
